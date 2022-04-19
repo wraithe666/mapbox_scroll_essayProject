@@ -1,2 +1,2 @@
-# mapbox_scroll_essay
-Basic template code for a scrolling essay.
+# Mapbox Scroll Essay
+Basic template code for a scrolling essay. Use this as the basis for your visual essay in Mapbox

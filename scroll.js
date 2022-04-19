@@ -33,26 +33,21 @@ pitch: 50
 bearing: 45,
 center: [74.8736788, 31.6343083],
 zoom: 14,
-pitch: 65
+pitch: 65,
+speed: .5
 },
 'part_5': {
 bearing: 180,
 center: [77.1835, 28.6239],
 zoom: 11,
 pitch: 10,
-speed: 2,
+speed: 1,
 curve:1
 },
 'part_6': {
-bearing: 180,
-center: [-0.19684993, 51.5033856],
-zoom: 12.3
-},
-'part_7': {
-bearing: 90,
-center: [-0.10669358, 51.51433123],
-zoom: 17.3,
-pitch: 40
+bearing: 25,
+center: [77.0688997, 28.5272803],
+zoom: 7
 }
 };
 

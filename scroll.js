@@ -12,11 +12,19 @@ pitch: 0
 map.on('load', () => {
     //Hide all presentation layers
     //This demo uses three specific layers. I want to hide them initially so I can reveal them piece meal.
-    map.setLayoutProperty('events-post', 'visibility', 'none');
-    map.setLayoutProperty('events-prepart', 'visibility', 'none');
+    map.setLayoutProperty('events-interaction-prepartition', 'visibility', 'none');
     map.setLayoutProperty('events-interaction-partition', 'visibility', 'none');
+    map.setLayoutProperty('events-interaction-postpartition', 'visibility', 'none');
+    map.setLayoutProperty('events-interaction-longpartition', 'visibility', 'none');
+
+    if (map.getLayoutProperty('events-interaction-prepartition', 'visibility') === 'none' ) {
+        map.setLayoutProperty('events-interaction-prepartition', 'visibility', 'visible');
+    }
   
 });
+
+
+
 const chapters = {
 'part_1': {
 bearing:0,
@@ -28,7 +36,7 @@ pitch: 0
 duration: 7000,
 center: [74.3141829, 31.5656822],
 bearing: 0,
-zoom: 10,
+zoom: 5,
 pitch: 0
 },
 'part_3': {

@@ -12,14 +12,14 @@ pitch: 0
 map.on('load', () => {
     //Hide all presentation layers
     //This demo uses three specific layers. I want to hide them initially so I can reveal them piece meal.
-    map.setLayoutProperty('events-interaction-prepartition', 'visibility', 'none');
     map.setLayoutProperty('events-interaction-partition', 'visibility', 'none');
     map.setLayoutProperty('events-interaction-postpartition', 'visibility', 'none');
     map.setLayoutProperty('events-interaction-longpartition', 'visibility', 'none');
+    map.setLayoutProperty('events-interaction-prepartition', 'visibility', 'none');
 
-    if (map.getLayoutProperty('events-interaction-prepartition', 'visibility') === 'none' ) {
-        map.setLayoutProperty('events-interaction-prepartition', 'visibility', 'visible');
-    }
+    // if (map.getLayoutProperty('events-interaction-prepartition', 'visibility') === 'none' ) {
+    //     map.setLayoutProperty('events-interaction-prepartition', 'visibility', 'visible');
+    // }
   
 });
 
@@ -34,9 +34,9 @@ pitch: 0
 },
 'part_2': {
 duration: 7000,
-center: [74.3141829, 31.5656822],
+center: [82.53, 29.04],
 bearing: 0,
-zoom: 5,
+zoom: 4,
 pitch: 0
 },
 'part_3': {
@@ -89,9 +89,51 @@ return bounds.top < window.innerHeight && bounds.bottom > 0;
 // On every scroll event, check which element is on screen
 window.onscroll = () => {
 for (const chapterName in chapters) {
+
+if (chapterName == 'part_1'){
+    map.setLayoutProperty('events-interaction-partition', 'visibility', 'none');
+    map.setLayoutProperty('events-interaction-postpartition', 'visibility', 'none');
+    map.setLayoutProperty('events-interaction-longpartition', 'visibility', 'none');
+    map.setLayoutProperty('events-interaction-prepartition', 'visibility', 'none');}
+
+else if (chapterName == 'part_2'){
+    map.setLayoutProperty('events-interaction-partition', 'visibility', 'none');
+    map.setLayoutProperty('events-interaction-postpartition', 'visibility', 'none');
+    map.setLayoutProperty('events-interaction-longpartition', 'visibility', 'none');
+    map.setLayoutProperty('events-interaction-prepartition', 'visibility', 'visible');
+ }
+else if (chapterName == 'part_3'){
+    map.setLayoutProperty('events-interaction-partition', 'visibility', 'visible');
+    map.setLayoutProperty('events-interaction-postpartition', 'visibility', 'none');
+    map.setLayoutProperty('events-interaction-longpartition', 'visibility', 'none');
+    map.setLayoutProperty('events-interaction-prepartition', 'visibility', 'none');
+
+}
+
+else if (chapterName == 'part_4'){
+    map.setLayoutProperty('events-interaction-partition', 'visibility', 'none');
+    map.setLayoutProperty('events-interaction-postpartition', 'visibility', 'visible');
+    map.setLayoutProperty('events-interaction-longpartition', 'visibility', 'none');
+    map.setLayoutProperty('events-interaction-prepartition', 'visibility', 'none');
+
+}
+
+else if (chapterName == 'part_5'){
+    map.setLayoutProperty('events-interaction-partition', 'visibility', 'none');
+    map.setLayoutProperty('events-interaction-postpartition', 'visibility', 'none');
+    map.setLayoutProperty('events-interaction-longpartition', 'visibility', 'visible');
+    map.setLayoutProperty('events-interaction-prepartition', 'visibility', 'none');
+
+}
 if (isElementOnScreen(chapterName)) {
 setActiveChapter(chapterName);
 break;
 }
+
+
+
+
+
+
 }
 };

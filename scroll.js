@@ -16,7 +16,7 @@ map.on('load', () => {
     map.setLayoutProperty('events-prepart', 'visibility', 'none');
     map.setLayoutProperty('events-interaction-partition', 'visibility', 'none');
   
-
+});
 const chapters = {
 'part_1': {
 bearing:0,

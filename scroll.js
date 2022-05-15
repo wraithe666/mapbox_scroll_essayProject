@@ -8,6 +8,15 @@ bearing: 0,
 pitch: 0
 });
 
+//This is all the stuff that runs on the first load of the map.
+map.on('load', () => {
+    //Hide all presentation layers
+    //This demo uses three specific layers. I want to hide them initially so I can reveal them piece meal.
+    map.setLayoutProperty('events-post', 'visibility', 'none');
+    map.setLayoutProperty('events-prepart', 'visibility', 'none');
+    map.setLayoutProperty('events-interaction-partition', 'visibility', 'none');
+  
+
 const chapters = {
 'part_1': {
 bearing:0,

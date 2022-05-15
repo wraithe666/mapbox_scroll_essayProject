@@ -40,32 +40,37 @@ zoom: 4,
 pitch: 0
 },
 'part_3': {
-bearing: 45,
-center: [74.3383, 31.5767],
-zoom: 13,
-speed: 1,
-pitch: 50
+center: [76.629, 31.988], 
+zoom: 4,
+speed: .25,
+pitch: 20
 },
 'part_4': {
-bearing: 45,
+
 center: [74.8736788, 31.6343083],
-zoom: 14,
-pitch: 65,
+zoom: 3,
+pitch: 20,
 speed: .5
 },
 'part_5': {
-bearing: 180,
-center: [77.1835, 28.6239],
-zoom: 11,
+
+center: [77.206376, 28.696161],
+zoom: 16.18,
 pitch: 10,
 speed: 1,
 curve:1
 },
 'part_6': {
-bearing: 25,
+
 center: [77.0688997, 28.5272803],
-zoom: 7
-}
+zoom: 3
+},
+'part_7': {
+
+    center: [77.0688997, 28.5272803],
+    zoom: 3
+    }
+
 };
 
 let activeChapterName = 'part_1';
@@ -120,20 +125,30 @@ else if (chapterName == 'part_4'){
 
 else if (chapterName == 'part_5'){
     map.setLayoutProperty('events-interaction-partition', 'visibility', 'none');
+    map.setLayoutProperty('events-interaction-postpartition', 'visibility', 'visible');
+    map.setLayoutProperty('events-interaction-longpartition', 'visibility', 'none');
+    map.setLayoutProperty('events-interaction-prepartition', 'visibility', 'none');
+
+}
+
+else if (chapterName == 'part_6'){
+    map.setLayoutProperty('events-interaction-partition', 'visibility', 'none');
     map.setLayoutProperty('events-interaction-postpartition', 'visibility', 'none');
     map.setLayoutProperty('events-interaction-longpartition', 'visibility', 'visible');
     map.setLayoutProperty('events-interaction-prepartition', 'visibility', 'none');
+
+}
+
+else if (chapterName == 'part_7'){
+    map.setLayoutProperty('events-interaction-partition', 'visibility', 'visible');
+    map.setLayoutProperty('events-interaction-postpartition', 'visibility', 'visible');
+    map.setLayoutProperty('events-interaction-longpartition', 'visibility', 'visible');
+    map.setLayoutProperty('events-interaction-prepartition', 'visibility', 'visible');
 
 }
 if (isElementOnScreen(chapterName)) {
 setActiveChapter(chapterName);
 break;
 }
-
-
-
-
-
-
 }
 };
